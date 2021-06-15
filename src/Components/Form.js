@@ -23,7 +23,7 @@ export class Form extends Component {
     }
     
     renderOptions = () => {
-        return this.state.stateAbbreviations.map(state => <option>{state}</option>)
+        return this.state.stateAbbreviations.map(state => <option key={state}>{state}</option>)
    
     }
 
@@ -40,14 +40,14 @@ export class Form extends Component {
                 <fieldset>
                 <div className="pure-g">
                     <div className="pure-u-1 pure-u-md-3-5 select-container">
-                        <label className="color-3" for="form-states">Select State</label>
+                        <label className="color-3" htmlFor="form-states">Select State</label>
                         <select className="pure-u-23-24" id="form-states" name="selectedState" value={this.state.selectedState} onChange={this.onChange}> 
                         {this.renderOptions()}
                         </select>
                     </div>
 
                     <div className="pure-u-1 pure-u-md-2-5">
-                    <button type="submit" class="pure-button pure-button-primary" id="form-submit">Find Parks</button>
+                    <button type="submit" className="pure-button pure-button-primary" id="form-submit">Find Parks</button>
                     </div>
                     </div>
                 </fieldset>
