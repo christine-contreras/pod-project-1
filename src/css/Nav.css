@@ -1,0 +1,17 @@
+/* navigation */
+
+.logo{
+    max-width: 150px;
+  }
+  
+  .logo svg{
+    width: 100%;
+  }
+  
+  .cls-1{fill:#372B15;}
+  .cls-2{fill:none;stroke:#372B15;stroke-miterlimit:10;stroke-width:6px;}
+  
+  .pure-menu-heading{
+    font-size: 15px;
+    color: #372B15;
+  }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../css/Form.css'
 
 export class Form extends Component {
     constructor() {
@@ -35,14 +36,20 @@ export class Form extends Component {
 
     render() {
         return (
-            <form onSubmit={this.renderSubmit}>
+            <form className="hero-form" onSubmit={this.renderSubmit}>
                 <fieldset>
-                    <label for="form-states">Select States</label>
-                    <select id="form-states" name="selectedState" value={this.state.selectedState} onChange={this.onChange}> 
-                    {this.renderOptions()}
-                    </select>
+                <div className="pure-g">
+                    <div className="pure-u-1 pure-u-md-3-5 select-container">
+                        <label className="color-3" for="form-states">Select State</label>
+                        <select className="pure-u-23-24" id="form-states" name="selectedState" value={this.state.selectedState} onChange={this.onChange}> 
+                        {this.renderOptions()}
+                        </select>
+                    </div>
 
-                    <button type="submit" class="pure-button pure-button-primary block" id="form-submit">Find Parks</button>
+                    <div className="pure-u-1 pure-u-md-2-5">
+                    <button type="submit" class="pure-button pure-button-primary" id="form-submit">Find Parks</button>
+                    </div>
+                    </div>
                 </fieldset>
             </form>
         )

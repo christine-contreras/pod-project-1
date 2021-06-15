@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import Nav from './Components/Nav'
 import Hero from './Components/Hero'
 import ParksContainer from './Components/ParksContainer'
-import './App.css'
 
 export class App extends Component {
 
@@ -41,6 +41,7 @@ export class App extends Component {
   render() {
     return (
       <div>
+        <Nav />
         <Hero fetchingParks={this.fetchAPI} />
         <ParksContainer parks={this.state.selectedParks}/>
       </div>
