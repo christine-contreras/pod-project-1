@@ -74,11 +74,6 @@ export class ParksContainer extends Component {
         return stateObjects[parkState]
     }
 
-    // renderParkCard = () => {
-    //     this.props.parks.map(park => <ParkCard key={park.id} parkInfo={park}/>)
-    // }
-
-
     render() {
         return (
             <div className="container">
@@ -87,10 +82,7 @@ export class ParksContainer extends Component {
                 </div>
 
                 <div className="container-flex padding-top">
-                    <ParkCard />
-                    <ParkCard />
-                    <ParkCard />
-                    <ParkCard />
+                    {this.props.parks.map(park => <ParkCard key={park.id} parkInfo={park}/>)}
                 </div>
 
                 

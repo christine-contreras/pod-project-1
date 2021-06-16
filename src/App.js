@@ -42,7 +42,8 @@ export class App extends Component {
       <div>
         <Nav />
         <Hero fetchingParks={this.fetchAPI} />
-        <ParksContainer parkState={this.state.selectedState} parks={this.state.selectedParks}/>
+        {this.state.selectedParks.length !== 0 ? <ParksContainer parkState={this.state.selectedState} parks={this.state.selectedParks}/> : null}
+        
       </div>
     )
   }

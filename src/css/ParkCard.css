@@ -16,6 +16,7 @@
     grid-row: row 1 / span 9;
     -webkit-box-shadow: -2px 6px 12px 0px rgba(0,0,0,0.32); 
     box-shadow: -2px 6px 12px 0px rgba(0,0,0,0.32);
+    border-radius: 4px;
 }
 
 .park-card-info{
@@ -26,6 +27,8 @@
     display: flex;
     flex-flow: column nowrap;
     border-radius: 4px;
+    -webkit-box-shadow: -2px 6px 12px 0px rgba(0,0,0,0.32); 
+    box-shadow: -2px 6px 12px 0px rgba(0,0,0,0.32);
 }
 
 .park-card-info .pure-button{
