@@ -1,0 +1,41 @@
+/* park card css */
+
+.park-card{
+    display: grid;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding: 3em 1em;
+    grid-template-columns: repeat(5, [col] 20%);
+    grid-template-rows: repeat(10, [row] 60px );
+
+}
+
+.card-image{
+    grid-column: col 1 / span 4;
+    grid-row: row 1 / span 9;
+    -webkit-box-shadow: -2px 6px 12px 0px rgba(0,0,0,0.32); 
+    box-shadow: -2px 6px 12px 0px rgba(0,0,0,0.32);
+}
+
+.park-card-info{
+    grid-column: col 2 / span 4;
+    grid-row: row 7 / span 4;
+    background: rgb(55 43 21 / 95%);
+    padding: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 4px;
+}
+
+.park-card-info .pure-button{
+    align-self: flex-end;
+}
+
+
+@media (min-width: 992px) {
+    .park-card{
+        width: 45%;
+    }
+    
+  }

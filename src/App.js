@@ -8,16 +8,14 @@ export class App extends Component {
   constructor(){
     super()
     this.state = {
-      selectedParks: []
+      selectedParks: [],
+      selectedState: ""
     }
   }
 
   fetchAPI = (stateAbbr) => {
     const apiKey = process.env.REACT_APP_API_KEY
-    let activity = 'Guided Tours'
     let park = 'pais'
-    //fetch all parks
-    //fetch(`https://developer.nps.gov/api/v1/parks?api_key=${apiKey}&limit=500`)
 
     //fetch parks by state 
     fetch(`https://developer.nps.gov/api/v1/parks?stateCode=${stateAbbr}=&api_key=${apiKey}`)
@@ -32,7 +30,8 @@ export class App extends Component {
     .then(json => {
 
       this.setState({
-        selectedParks: json
+        selectedParks: json.data,
+        selectedState: stateAbbr
       })
 
     })
@@ -43,7 +42,7 @@ export class App extends Component {
       <div>
         <Nav />
         <Hero fetchingParks={this.fetchAPI} />
-        <ParksContainer parks={this.state.selectedParks}/>
+        <ParksContainer parkState={this.state.selectedState} parks={this.state.selectedParks}/>
       </div>
     )
   }

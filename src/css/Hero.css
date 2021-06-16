@@ -1,8 +1,9 @@
 /* hero css */
 .hero{
-    background: url('https://images.unsplash.com/photo-1606859309981-270838d57ed8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80') no-repeat fixed center;
+    background: url('https://images.unsplash.com/photo-1606859309981-270838d57ed8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80') no-repeat center;
     height: 80vh;
     min-height: 400px;
+    max-height: 900px;
     display: grid;
     grid-template-columns: repeat(5, [col] 20%);
     grid-template-rows: repeat(1, [row] 100% );
@@ -39,6 +40,8 @@
         background: none;
         grid-template-columns: repeat(10, [col] 10%);
         grid-template-rows: repeat(9, [row] 11% );
+        height: auto;
+        
     }
 
     .hero-image1, .hero-image2{
@@ -51,12 +54,12 @@
 
     .hero-image2{
         grid-column: col 3 / span 8;
-        grid-row: row 5;
+        grid-row: row 4;
     }
     
     .hero-content{
         grid-column: col 5 / span 6;
-        grid-row: row 1 / span 4;
+        grid-row: row 1 / span 3;
         text-align: left;
         padding-left: 1em;
     }

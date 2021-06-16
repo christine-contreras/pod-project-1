@@ -7,6 +7,7 @@ body, .pure-g [class *= "pure-u"] {
   font-size: 18px;
   line-height: 1.42857;
   color: #372B15;
+  box-sizing: border-box;
 }
 
 .color-1{
@@ -82,4 +83,36 @@ h4, .h4 {
 .pure-button-primary, .pure-button-selected, a.pure-button-primary, a.pure-button-selected{
   background-color: #76976C;
   color: #fff;
+}
+
+
+.subtitle{
+  font-size: 50%;
+  font-weight: 400;
+}
+
+
+.container-flex{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media (min-width: 992px) {
+  .container-flex{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  
 }
