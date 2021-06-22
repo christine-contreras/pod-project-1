@@ -65,7 +65,9 @@ export class ParksContainer extends Component {
                 "WV": "West Virginia",
                 "WI": "Wisconsin",
                 "WY": "Wyoming"
-            }
+            },
+
+            defaultParks: []
         }
     }
 
@@ -74,8 +76,13 @@ export class ParksContainer extends Component {
         return stateObjects[parkState]
     }
 
+    
+
+    
+
     render() {
         return (
+            <div className="padding-top">
             <div className="container">
                 <div className="parks-title center">
                     <h2><span className="color-3 subtitle block">{this.renderStateName(this.props.parkState)}</span>National Parks</h2>
@@ -84,10 +91,7 @@ export class ParksContainer extends Component {
                 <div className="container-flex padding-top">
                     {this.props.parks.map(park => <ParkCard key={park.id} parkInfo={park}/>)}
                 </div>
-
-                
-
-
+            </div>
             </div>
         )
     }

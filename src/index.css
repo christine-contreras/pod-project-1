@@ -26,6 +26,20 @@ body, .pure-g [class *= "pure-u"] {
   color: #fff;
 }
 
+.color-5{
+  color: #C0D1BB;
+}
+
+
+.background-1{
+  background-color: #372B15;
+}
+
+.background-2{
+  background-color: #76976C;
+}
+
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
 font-family:  "Montserrat", Helvetica, Arial, sans-serif;
