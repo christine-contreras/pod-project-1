@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import Nav from './Components/Nav'
-import Hero from './Components/Hero'
-import ParksContainer from './Components/ParksContainer'
+import Home from './Containers/Home'
+import SavedParks from './Containers/SavedParks'
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 const apiKey = process.env.REACT_APP_API_KEY
 
 export class App extends Component {
-
   constructor(){
     super()
     this.state = {
       selectedParks: [],
       selectedState: "",
-      defaultParks: []
+      defaultParks: [],
+      savedParks: []
     }
   }
 
@@ -34,6 +36,16 @@ export class App extends Component {
     })
   }
 
+  handleSavedParks = (newPark) => {
+    this.setState(previousState => ({savedParks:[...previousState.savedParks, newPark]}))
+  }
+
+  handleUnsavePark = (removePark) => {
+    const newSavedParks = this.state.savedParks.filter(park => park !== removePark)
+
+    this.setState({savedParks: newSavedParks})
+  }
+
   componentDidMount() {
     //fetch parks by state 
     fetch(`https://developer.nps.gov/api/v1/parks?api_key=${apiKey}&limit=50`)
@@ -52,18 +64,32 @@ export class App extends Component {
   }
 
 
+
+
   render() {
     return (
-      <div>
+      <Router>
+        <div>
         <Nav />
-        <Hero fetchingParks={this.fetchAPI} />
+        <Route exact path="/"
+        render={(routerProps) => <Home
+        {...routerProps}
+        title="National Parks"
+        fetchingParks={this.fetchAPI}
+        parkState={this.state.selectedState}
+        handleParks={this.handleSavedParks}
+        parks={this.state.selectedParks.length !== 0 ? this.state.selectedParks : this.state.defaultParks}/>} 
+        
+        />
 
-        <ParksContainer 
-        parkState={this.state.selectedState} 
-        parks={this.state.selectedParks.length !== 0 ? this.state.selectedParks : this.state.defaultParks}/>
-        
-        
-      </div>
+        <Route exact path="/saved"
+        render={(routerProps) => <SavedParks
+        {...routerProps}
+        title="Saved Parks"
+        savedParks={this.state.savedParks}
+        handleParks={this.handleUnsavePark}/>}/>
+       </div>
+      </Router>
     )
   }
 }

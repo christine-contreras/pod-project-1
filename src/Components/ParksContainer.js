@@ -85,11 +85,14 @@ export class ParksContainer extends Component {
             <div className="padding-top">
             <div className="container">
                 <div className="parks-title center">
-                    <h2><span className="color-3 subtitle block">{this.renderStateName(this.props.parkState)}</span>National Parks</h2>
+                    <h2><span className="color-3 subtitle block">{this.renderStateName(this.props.parkState)}</span>{this.props.title}</h2>
                 </div>
 
                 <div className="container-flex padding-top">
-                    {this.props.parks.map(park => <ParkCard key={park.id} parkInfo={park}/>)}
+                    {this.props.parks.map(park => <ParkCard handleParks={this.props.handleParks}
+                    page={this.props.page}
+                    key={park.id}
+                    parkInfo={park}/>)}
                 </div>
             </div>
             </div>

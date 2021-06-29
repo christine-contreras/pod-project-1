@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../css/ParkCard.css'
 
 export class ParkCard extends Component {
+
     render() {
 
         const cardStyle = {
@@ -15,8 +16,8 @@ export class ParkCard extends Component {
                 <div className="park-card-info">
                     <h3 className="h5 color-4">{this.props.parkInfo.fullName}</h3>
                     <p className="color-3">{this.props.parkInfo.description.slice(0, 130).concat('...')}</p>
-                    
-                    <button type="submit" className="pure-button pure-button-primary">View Park</button>
+
+                    <button type="submit" className="pure-button pure-button-primary" onClick={() => this.props.handleParks(this.props.parkInfo)}>{this.props.page === "/saved" ? "Remove Park" : "Save Park"}</button>
                 </div>
 
             </div>
